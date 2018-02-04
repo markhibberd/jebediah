@@ -43,17 +43,17 @@ data Following =
 newtype LogGroup =
   LogGroup {
       logGroup :: Text
-    } deriving (Eq, Show)
+    } deriving (Eq, Ord, Show)
 
 newtype LogStream =
   LogStream {
       logStream :: Text
-    } deriving (Eq, Show)
+    } deriving (Eq, Ord, Show)
 
 newtype Sequence =
   Sequence {
       getSequence :: Text
-    } deriving (Eq, Show)
+    } deriving (Eq, Ord, Show)
 
 newtype ExclusiveSequence =
   ExclusiveSequence {
@@ -64,7 +64,7 @@ data Log =
   Log {
       logChunk :: !Text
     , logTime :: !UTCTime
-    } deriving (Eq, Show)
+    } deriving (Eq, Ord, Show)
 
 data Query =
     Everything
